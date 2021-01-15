@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : 172.16.0.42
  Source Server Type    : MariaDB
  Source Server Version : 100504
- Source Host           : localhost:3306
+ Source Host           : 172.16.0.42:3306
  Source Schema         : picturebed
 
  Target Server Type    : MariaDB
  Target Server Version : 100504
  File Encoding         : 65001
 
- Date: 28/12/2020 17:44:56
+ Date: 15/01/2021 21:22:04
 */
 
 SET NAMES utf8mb4;
@@ -28,11 +28,6 @@ CREATE TABLE `album`  (
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `userid` int(10) NULL DEFAULT NULL
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of album
--- ----------------------------
-INSERT INTO `album` VALUES ('TOALBUM9ee19N', '第一个画廊', '2020-12-28', '951021', 1);
 
 -- ----------------------------
 -- Table structure for code
@@ -87,7 +82,7 @@ CREATE TABLE `config`  (
 -- ----------------------------
 -- Records of config
 -- ----------------------------
-INSERT INTO `config` VALUES (1, 8, 1, '师哥', '网站由JAVA语言编写应用SpringBoot框架开发，前端全部组件由BootStrap/Layui框架编写。由作者个人更新维护，后期会加入更全面的功能供大家使用，如有BUG请与我反馈。', 'https://hellohao-cloud.oss-cn-beijing.aliyuncs.com/Pexels.mp4', '1', '<a rel=\"nofollow\" target=\"_blank\">请叫我师哥</a>', '也许...|这将是最好用的图床', 'console.log(\'\\n\' + \' %c 师哥出品，必属精品！ \' + \'\\n\', \'color: #fadfa3; background: #030307; padding:5px 0;\');', 'http://127.0.0.1:8088', 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1565769264&di=74d809d6cfae81bbab83bf9d573d8f9a&src=http://pic17.nipic.com/20110917/7420038_160826355111_2.jpg', 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1565769264&di=74d809d6cfae81bbab83bf9d573d8f9a&src=http://pic17.nipic.com/20110917/7420038_160826355111_2.jpg', 1, NULL, NULL, NULL, 1);
+INSERT INTO `config` VALUES (1, 8, 1, '请叫我师哥', '网站由JAVA语言编写应用SpringBoot框架开发，前端全部组件由BootStrap/Layui框架编写。', 'https://hellohao-cloud.oss-cn-beijing.aliyuncs.com/Pexels.mp4', '1', '<a rel=\"nofollow\" target=\"_blank\">鲁ICP备20003264号-1</a>', '也许...|这将是最好用的图床', 'console.log(\'\\n\' + \' %c 师哥出品，必属精品！ \' + \'\\n\', \'color: #fadfa3; background: #030307; padding:5px 0;\');', 'http://172.16.0.42:8088', 'http://qjwsg.com:8080/fileupload/file//icon/50a203b485f547de865efe7407205050.jpg', 'http://qjwsg.com:8080/fileupload/file//icon/3bf7cca17ddb493b886b8a9dcc0dcdd5.jpg', 1, '', '', '', 1);
 
 -- ----------------------------
 -- Table structure for emailconfig
@@ -135,15 +130,6 @@ CREATE TABLE `imgandalbum`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of imgandalbum
--- ----------------------------
-INSERT INTO `imgandalbum` VALUES ('2020/12/28/TOIMG55c9c1228034019N.png', 'TOALBUM9ee19N');
-INSERT INTO `imgandalbum` VALUES ('2020/12/28/TOIMG74d771228034019N.png', 'TOALBUM9ee19N');
-INSERT INTO `imgandalbum` VALUES ('2020/12/28/TOIMGcb1b61228044637N.png', 'TOALBUM9ee19N');
-INSERT INTO `imgandalbum` VALUES ('2020/12/28/TOIMG1888f1228044638N.png', 'TOALBUM9ee19N');
-INSERT INTO `imgandalbum` VALUES ('2020/12/28/TOIMGfbee11228044638N.png', 'TOALBUM9ee19N');
-
--- ----------------------------
 -- Table structure for imgdata
 -- ----------------------------
 DROP TABLE IF EXISTS `imgdata`;
@@ -161,21 +147,31 @@ CREATE TABLE `imgdata`  (
   `md5key` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `index_md5key_url`(`md5key`, `imgurl`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compressed;
+) ENGINE = InnoDB AUTO_INCREMENT = 45 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compressed;
 
 -- ----------------------------
 -- Records of imgdata
 -- ----------------------------
-INSERT INTO `imgdata` VALUES (3, '2020/12/28/TOIMG8feef1228034019N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG8feef1228034019N.png', 1, '2020-12-28', 33, '0:0:0:0:0:0:0:1', 5, 0, NULL, 'c3c6b8b02135ff705099e31896a40ba3');
-INSERT INTO `imgdata` VALUES (4, '2020/12/28/TOIMG27a471228034019N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG27a471228034019N.png', 1, '2020-12-28', 31, '0:0:0:0:0:0:0:1', 5, 0, NULL, '5aabd5ae7f506d9a14b995c1aebd8032');
-INSERT INTO `imgdata` VALUES (5, '2020/12/28/TOIMG3f94b1228034019N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG3f94b1228034019N.png', 1, '2020-12-28', 701, '0:0:0:0:0:0:0:1', 5, 0, NULL, 'bb0e745f1bd70301067bcd643c8210c2');
-INSERT INTO `imgdata` VALUES (6, '2020/12/28/TOIMG55c9c1228034019N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG55c9c1228034019N.png', 1, '2020-12-28', 340, '0:0:0:0:0:0:0:1', 5, 0, '', '0dcf051e419b3c1330cdb50c25ba74ba');
-INSERT INTO `imgdata` VALUES (7, '2020/12/28/TOIMG74d771228034019N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG74d771228034019N.png', 1, '2020-12-28', 155, '0:0:0:0:0:0:0:1', 5, 0, '', 'a93f5402b3572dcd797aa51ad0bed814');
-INSERT INTO `imgdata` VALUES (8, '2020/12/28/TOIMG094361228041534N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG094361228041534N.png', 1, '2020-12-28', 14, '0:0:0:0:0:0:0:1', 5, 0, NULL, '15eb54fcb5a69e527f03287c106fbf52');
-INSERT INTO `imgdata` VALUES (9, '2020/12/28/TOIMGcb1b61228044637N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMGcb1b61228044637N.png', 1, '2020-12-28', 49, '0:0:0:0:0:0:0:1', 5, 0, '', '4812f2386d32385ae43ee4bd6a717838');
-INSERT INTO `imgdata` VALUES (10, '2020/12/28/TOIMG1888f1228044638N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMG1888f1228044638N.png', 1, '2020-12-28', 64, '0:0:0:0:0:0:0:1', 5, 0, '', '7350b217e7fde0d6152d8a01660d425a');
-INSERT INTO `imgdata` VALUES (11, '2020/12/28/TOIMGfbee11228044638N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMGfbee11228044638N.png', 1, '2020-12-28', 46, '0:0:0:0:0:0:0:1', 5, 0, '', '50c2d2b67cb94dfeb09c18746eb28f29');
-INSERT INTO `imgdata` VALUES (12, '2020/12/28/TOIMGe5d641228045647N.png', 'http://127.0.0.1:8088/2020/12/28/TOIMGe5d641228045647N.png', 0, '2020-12-28', 1396, '0:0:0:0:0:0:0:1', 5, 0, NULL, 'a894878a9b97664ef2eee16619befc5d');
+INSERT INTO `imgdata` VALUES (23, '2020/12/28/TOIMG4ea611228083701N.jpg', 'http://172.16.0.42:8088/2020/12/28/TOIMG4ea611228083701N.jpg', 1, '2020-12-28', 5, '172.16.0.37', 5, 0, NULL, 'd74da3363fb1e770537ce50383f55569');
+INSERT INTO `imgdata` VALUES (24, '2020/12/28/TOIMG9e28b1228083701N.jpg', 'http://172.16.0.42:8088/2020/12/28/TOIMG9e28b1228083701N.jpg', 1, '2020-12-28', 5, '172.16.0.37', 5, 0, NULL, 'c425c741f9ecd0818d457e764d883432');
+INSERT INTO `imgdata` VALUES (25, '2020/12/28/TOIMG421281228083701N.jpg', 'http://172.16.0.42:8088/2020/12/28/TOIMG421281228083701N.jpg', 1, '2020-12-28', 4, '172.16.0.37', 5, 0, NULL, '1546aa0abf8f69f2650cbf752f08503f');
+INSERT INTO `imgdata` VALUES (26, '2020/12/28/TOIMGe26b71228083701N.jpg', 'http://172.16.0.42:8088/2020/12/28/TOIMGe26b71228083701N.jpg', 1, '2020-12-28', 4, '172.16.0.37', 5, 0, NULL, '66572423691d87c689ee5bc15e493b9b');
+INSERT INTO `imgdata` VALUES (27, '2020/12/28/TOIMG4ee5b1228083701N.jpg', 'http://172.16.0.42:8088/2020/12/28/TOIMG4ee5b1228083701N.jpg', 1, '2020-12-28', 4, '172.16.0.37', 5, 0, NULL, 'd0283458f45f884ae25f22c2850574e9');
+INSERT INTO `imgdata` VALUES (28, '2020/12/28/TOIMGc83191228090226N.png', 'http://172.16.0.42:8088/2020/12/28/TOIMGc83191228090226N.png', 1, '2020-12-28', 89, '172.16.0.37', 5, 0, NULL, '6f8fd4a68e8cc70524a888bf704c1c62');
+INSERT INTO `imgdata` VALUES (29, '2020/12/28/TOIMG918d61228092634N.png', 'http://172.16.0.42:8088/2020/12/28/TOIMG918d61228092634N.png', 1, '2020-12-28', 54, '172.16.0.37', 5, 0, NULL, '6482f50aa71de369d9780395ba21e351');
+INSERT INTO `imgdata` VALUES (30, '2020/12/28/TOIMG5371a1228092859N.png', 'http://172.16.0.42:8088/2020/12/28/TOIMG5371a1228092859N.png', 1, '2020-12-28', 178, '172.16.0.37', 5, 0, NULL, '1d58a77c32511b23e5dc016b203e1e2b');
+INSERT INTO `imgdata` VALUES (33, '2021/01/12/TOIMG1fbfa0112074617N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMG1fbfa0112074617N.jpg', 1, '2021-01-12', 71, '172.16.0.38', 5, 0, NULL, 'bdb83d55482b855986bec6e09c1d0018');
+INSERT INTO `imgdata` VALUES (34, '2021/01/12/TOIMG2c2840112074618N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMG2c2840112074618N.jpg', 1, '2021-01-12', 169, '172.16.0.38', 5, 0, NULL, '35d2e194583fcd895100ac67109e8c50');
+INSERT INTO `imgdata` VALUES (35, '2021/01/12/TOIMG685b00112074618N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMG685b00112074618N.jpg', 1, '2021-01-12', 64, '172.16.0.38', 5, 0, NULL, '6a13e5f64c84e89dc3b19d6137c73fb9');
+INSERT INTO `imgdata` VALUES (36, '2021/01/12/TOIMG0f67b0112074618N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMG0f67b0112074618N.jpg', 1, '2021-01-12', 87, '172.16.0.38', 5, 0, NULL, '95f4de987d14a55ef5f89e6778a45535');
+INSERT INTO `imgdata` VALUES (37, '2021/01/12/TOIMGd026b0112074837N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMGd026b0112074837N.jpg', 1, '2021-01-12', 155, '172.16.0.38', 5, 0, NULL, 'bf9fb934500464f712277de3cc63f1a0');
+INSERT INTO `imgdata` VALUES (38, '2021/01/12/TOIMGf8e030112074837N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMGf8e030112074837N.jpg', 1, '2021-01-12', 137, '172.16.0.38', 5, 0, NULL, '70f0f251b62aaa4dfdf0e99873ef1172');
+INSERT INTO `imgdata` VALUES (39, '2021/01/12/TOIMG44ad30112074837N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMG44ad30112074837N.jpg', 1, '2021-01-12', 157, '172.16.0.38', 5, 0, NULL, 'c0d3a74ad87a5f679b536cfbc49e406c');
+INSERT INTO `imgdata` VALUES (40, '2021/01/12/TOIMG2a7470112075238N.jpg', 'http://172.16.0.42:8088/2021/01/12/TOIMG2a7470112075238N.jpg', 1, '2021-01-12', 71, '172.16.0.38', 5, 0, NULL, 'd3b567f6c5f8bf4de35256fd0b76302f');
+INSERT INTO `imgdata` VALUES (41, '2021/01/13/TOIMGb408c0113112557N.jpeg', 'http://172.16.0.42:8088/2021/01/13/TOIMGb408c0113112557N.jpeg', 1, '2021-01-13', 309, '172.16.0.34', 5, 0, NULL, '51b2b9c4d132c73613a30ad616e765b2');
+INSERT INTO `imgdata` VALUES (42, '2021/01/14/TOIMG1b0520114104737N.png', 'http://172.16.0.42:8088/2021/01/14/TOIMG1b0520114104737N.png', 1, '2021-01-14', 95, '172.16.0.35', 5, 0, NULL, '5361809e8404155d395ea9d076df298f');
+INSERT INTO `imgdata` VALUES (43, '2021/01/14/TOIMG6e3b10114105636N.png', 'http://172.16.0.42:8088/2021/01/14/TOIMG6e3b10114105636N.png', 1, '2021-01-14', 180, '172.16.0.35', 5, 0, NULL, '499b66d3bb13b27f966532e4e15ab50e');
+INSERT INTO `imgdata` VALUES (44, '2021/01/15/TOIMG3fa470115081016N.png', 'http://172.16.0.42:8088/2021/01/15/TOIMG3fa470115081016N.png', 0, '2021-01-15', 22, '0:0:0:0:0:0:0:1', 5, 0, NULL, '029ad091b1e02578281573e2dfc93ebb');
 
 -- ----------------------------
 -- Table structure for imgreview
@@ -295,7 +291,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', 'YWRtaW4=', 'admin', '2019-06-12', 2, 'bf4e20c586284ae3bc31c7554d345fed', 1, 2048, 1);
+INSERT INTO `user` VALUES (1, 'admin', 'YWRtaW4=', 'admin', '2019-06-12', 2, 'c2af9b1f518e48c1864d97c8aa907a80', 1, 2048, 1);
 
 -- ----------------------------
 -- Table structure for usergroup

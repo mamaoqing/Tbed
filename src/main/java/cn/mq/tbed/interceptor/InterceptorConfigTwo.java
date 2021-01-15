@@ -41,7 +41,6 @@ public class InterceptorConfigTwo implements HandlerInterceptor {
             return false;
         } else {
             if (level == 2) {
-                System.out.println("进入成功");
                 return true;    //如果session里有user，表示该用户已经登陆，放行，用户即可继续调用自己需要的接口
             } else {
                 request.getRequestDispatcher("/admin/admin").forward(request, response);
