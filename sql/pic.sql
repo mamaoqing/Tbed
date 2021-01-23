@@ -102,7 +102,7 @@ CREATE TABLE `emailconfig`  (
 -- ----------------------------
 -- Records of emailconfig
 -- ----------------------------
-INSERT INTO `emailconfig` VALUES (1, 'shigepic@163.com', 'TUMBOATDWPCYWVQL', 'smtp.163.com', '25', '师哥', 1);
+INSERT INTO `emailconfig` VALUES (1, 'xxxx@163.com', '', 'smtp.163.com', '', '', 1);
 
 -- ----------------------------
 -- Table structure for group
