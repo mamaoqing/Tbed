@@ -497,7 +497,7 @@ Print.Normal(resultBean.toString());
     @ResponseBody
     public Msg getNotice() {
         Msg msg = new Msg();
-        String url = "http://tc.hellohao.cn/getNoticeText";
+        String url = "";
         if(TestUrl.testUrlWithTimeOut(url,2000)){
             String urls =url;
             msg.setData(HttpUtil.get(urls));

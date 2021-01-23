@@ -69,7 +69,7 @@ public class KODOImageupload {
                 java.text.DateFormat format1 = new java.text.SimpleDateFormat("MMddhhmmss");
                 String times = format1.format(new Date());
                 String imgurl = entry.getValue();
-                System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
+//                System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
                 try {
                     Response response = uploadManager.put(new File(imgurl),username + "/" + uuid+times + "." + entry.getKey(),upToken);
                     DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
@@ -146,7 +146,7 @@ public class KODOImageupload {
             java.text.DateFormat format1 = new java.text.SimpleDateFormat("MMddhhmmss");
             String times = format1.format(new Date());
             file = SetFiles.changeFile(entry.getValue());
-            System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
+//            System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
             try {
                 ReturnImage returnImage = new ReturnImage();
                 if(entry.getValue().getSize()/1024<=uploadConfig.getFilesizeuser()*1024){

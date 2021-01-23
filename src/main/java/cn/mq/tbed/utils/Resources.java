@@ -9,5 +9,5 @@ package cn.mq.tbed.utils;
  */
 public class Resources {
 
-    public final static String basePath = "sdzy";
+    public final static String basePath = "imgs";
 }

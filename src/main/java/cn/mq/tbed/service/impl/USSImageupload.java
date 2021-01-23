@@ -124,7 +124,7 @@ public class USSImageupload {
             String times = format1.format(new Date());
             file = SetFiles.changeFile(entry.getValue());
             // 上传文件流。
-            System.out.println("客户端：待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
+//            System.out.println("客户端：待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
             ReturnImage returnImage = new ReturnImage();
             if(entry.getValue().getSize()/1024<=uploadConfig.getFilesizeuser()*1024){
                 // 例2：采用数据流模式上传文件（节省内存）,自动创建父级目录

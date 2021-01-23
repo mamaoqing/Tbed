@@ -50,7 +50,7 @@ public class UpdateImgController {
 
     @RequestMapping({"/", "/index"})
     public String indexImg(Model model, HttpSession httpSession, HttpServletRequest request, HttpServletResponse response) {
-        Print.Normal("当前项目路径：" + System.getProperty("user.dir"));
+//        Print.Normal("当前项目路径：" + System.getProperty("user.dir"));
         Config config = configService.getSourceype();
         UploadConfig uploadConfig = uploadConfigService.getUpdateConfig();
         User u = (User) httpSession.getAttribute("user");

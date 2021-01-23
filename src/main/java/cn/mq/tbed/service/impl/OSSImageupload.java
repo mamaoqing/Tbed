@@ -50,7 +50,7 @@ public class OSSImageupload {
                     head = "image/"+entry.getKey();
                 }
                 meta.setHeader("Content-Type", head);//image/jpeg
-                System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
+//                System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
                 ossClient.putObject(key.getBucketname(), username + "/" + uuid+times + "." + entry.getKey(),file,meta);
                 ReturnImage returnImage = new ReturnImage();
                 returnImage.setImgname(username + "/" + uuid+times + "." + entry.getKey());//entry.getValue().getOriginalFilename()
@@ -85,7 +85,7 @@ public class OSSImageupload {
                     head = "image/"+entry.getKey();
                 }
                 meta.setHeader("Content-Type", head);//image/jpeg
-                System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
+//                System.out.println("待上传的图片："+username + "/" + uuid+times + "." + entry.getKey());
                 ossClient.putObject(key.getBucketname(), username + "/" + uuid+times + "." + entry.getKey(),new File(imgurl),meta);
                 ReturnImage returnImage = new ReturnImage();
                 returnImage.setImgurl(key.getRequestAddress() + "/" + username + "/" + uuid+times + "." + entry.getKey());
